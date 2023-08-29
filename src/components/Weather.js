@@ -29,7 +29,10 @@ const Weather = () => {
         }
     }
 
-    const handleSubmit = () => {}
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setCityName(e.target.element.cityName.value);
+    }
 
     return (
         <>

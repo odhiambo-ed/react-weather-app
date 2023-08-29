@@ -1,8 +1,12 @@
 import React from 'react'
+import { Container } from 'react-bootstrap'
+import WeatherForm from './components/WeatherForm'
 
 const App = () => {
   return (
-    <div>Hello React</div>
+      <Container>
+          <WeatherForm />
+    </Container>
   )
 }
 

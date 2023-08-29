@@ -6,8 +6,12 @@ const WeatherForm = () => {
       <Row>
           <Col>
               <Form>
-                  <h1>Form Header</h1>
-            </Form>
+                  <Form.Group controlId="cityName">
+                      <Form.Label>Enter City Name</Form.Label>
+                      <Form.Control type="text" placeholder='Enter city' />
+                  </Form.Group>
+                  <Button variant='primary' type='submit' >Get Weather</Button>
+              </Form>
           </Col>
     </Row>
   )

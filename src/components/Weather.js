@@ -1,8 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Row, Col, Form, Button } from 'react-bootstrap'
 
 const Weather = () => {
     const [weatherData, setWeatherData] = useState(null);
+
+    const [cityName, setCityName] = useState("");
+
+    useEffect((cityName) => {
+        fetchWeatherData(cityName)
+    }, [cityName])
 
     const fetchWeatherData = async (cityName) => {
         const url = 'https://open-weather13.p.rapidapi.com/city/landon';
@@ -16,20 +22,20 @@ const Weather = () => {
 
         try {
             const response = await fetch(url, options);
-            const result = await response.text();
+            const result = await response.json();
             setWeatherData(result);
         } catch (error) {
             console.error(error);
         }
     }
 
-    fetchWeatherData();
+    const handleSubmit = () => {}
 
     return (
         <>
             <Row>
                 <Col>
-                    <Form>
+                    <Form onSubmit={handleSubmit}>
                         <Form.Group controlId="cityName">
                             <Form.Label>Enter City Name</Form.Label>
                             <Form.Control type="text" placeholder='Enter city' />
@@ -41,7 +47,7 @@ const Weather = () => {
             <Row>
                 {weatherData && (
                     <div>
-                       <h2></h2> 
+                        <h2>Weather in {weatherData.name}, {weatherData.sys.country}</h2> 
                     </div>
                 )}
             </Row>

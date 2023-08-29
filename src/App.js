@@ -1,11 +1,11 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
-import WeatherForm from './components/WeatherForm'
+import Weather from './components/Weather'
 
 const App = () => {
   return (
       <Container>
-          <WeatherForm />
+          <Weather />
     </Container>
   )
 }

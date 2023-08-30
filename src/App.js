@@ -1,11 +1,11 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
-import Weather from './components/Weather'
+import Search from './components/Search'
 
 const App = () => {
   return (
       <Container>
-          <Weather />
+          <Search />
     </Container>
   )
 }
